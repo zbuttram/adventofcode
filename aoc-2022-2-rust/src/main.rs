@@ -35,9 +35,12 @@ fn part_two() {
         }).collect::<Vec<&str>>();
 
         let elf = throws[0];
-        let desiredOutcome = throws[1];
+        let desired_outcome = throws[1];
 
-        let player = match desiredOutcome {
+        println!("Elf throws {}", elf);
+        println!("Want a {}", desired_outcome);
+
+        let player = match desired_outcome {
             WIN => match elf {
                 ROCK => PAPER,
                 PAPER => SCISSORS,
@@ -61,6 +64,7 @@ fn part_two() {
 
         println!("Player throws {}", player);
         score += throw_score(player);
+        score += outcome_score(desired_outcome);
     }
 
     println!("SCORE: {}", score);
@@ -94,12 +98,12 @@ fn part_one() {
 
         if map.get(elf).unwrap() == &player {
             println!("Player wins");
-            score += 6;
+            score += outcome_score(WIN);
         } else if map.get(player).unwrap() == &elf {
             println!("Elf wins");
         } else {
             println!("Tie");
-            score += 3;
+            score += outcome_score(TIE);
         }
     }
 
@@ -111,6 +115,15 @@ fn throw_score(throw: &str) -> i32 {
         ROCK => 1,
         PAPER => 2,
         SCISSORS => 3,
+        _ => 0
+    }
+}
+
+fn outcome_score(outcome: &str) -> i32 {
+    match outcome {
+        WIN => 6,
+        LOSE => 0,
+        TIE => 3,
         _ => 0
     }
 }
