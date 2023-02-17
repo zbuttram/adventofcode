@@ -1,0 +1,3 @@
+C:/Users/zachb/Projects/adventofcode-2022/1/C/cmake-build-debug/CMakeFiles/C.dir
+C:/Users/zachb/Projects/adventofcode-2022/1/C/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/zachb/Projects/adventofcode-2022/1/C/cmake-build-debug/CMakeFiles/rebuild_cache.dir
